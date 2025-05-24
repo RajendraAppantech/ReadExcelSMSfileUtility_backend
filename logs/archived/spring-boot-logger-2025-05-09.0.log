@@ -1,0 +1,41 @@
+2025-05-09 00:15:07,971 INFO [main] org.springframework.boot.StartupInfoLogger [51] Starting ReadExcelSmSfileUtilityApplication using Java 23.0.1 with PID 6992 (C:\Users\gadeg\OneDrive\Desktop\ReadExcelSMSfileUtility\ReadExcelSMSfileUtility\target\classes started by gadeg in C:\Users\gadeg\OneDrive\Desktop\ReadExcelSMSfileUtility\ReadExcelSMSfileUtility)
+2025-05-09 00:15:07,987 INFO [main] org.springframework.boot.SpringApplication [638] No active profile set, falling back to 1 default profile: "default"
+2025-05-09 00:15:08,906 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [138] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-09 00:15:09,022 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate [207] Finished Spring Data repository scanning in 96 ms. Found 2 JPA repository interfaces.
+2025-05-09 00:15:10,346 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [108] Tomcat initialized with port(s): 2424 (http)
+2025-05-09 00:15:10,358 INFO [main] org.apache.juli.logging.DirectJDKLog [173] Initializing ProtocolHandler ["http-nio-2424"]
+2025-05-09 00:15:10,364 INFO [main] org.apache.juli.logging.DirectJDKLog [173] Starting service [Tomcat]
+2025-05-09 00:15:10,365 INFO [main] org.apache.juli.logging.DirectJDKLog [173] Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-05-09 00:15:10,550 INFO [main] org.apache.juli.logging.DirectJDKLog [173] Initializing Spring embedded WebApplicationContext
+2025-05-09 00:15:10,552 INFO [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [291] Root WebApplicationContext: initialization completed in 2387 ms
+2025-05-09 00:15:10,626 INFO [main] com.sms.RequestFilter [31] ******** Filter Initialized ********
+2025-05-09 00:15:10,894 INFO [main] com.zaxxer.hikari.HikariDataSource [110] HikariPool - Starting...
+2025-05-09 00:15:16,075 INFO [main] com.zaxxer.hikari.pool.HikariPool [565] HikariPool - Added connection org.postgresql.jdbc.PgConnection@7c11d32
+2025-05-09 00:15:16,082 INFO [main] com.zaxxer.hikari.HikariDataSource [123] HikariPool - Start completed.
+2025-05-09 00:15:16,181 INFO [main] org.hibernate.jpa.internal.util.LogHelper [31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-09 00:15:16,252 INFO [main] org.hibernate.Version [44] HHH000412: Hibernate ORM core version 6.2.22.Final
+2025-05-09 00:15:16,256 INFO [main] org.hibernate.cfg.Environment [191] HHH000406: Using bytecode reflection optimizer
+2025-05-09 00:15:16,661 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [87] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-09 00:15:16,847 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl [152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-09 00:15:18,368 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [55] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-09 00:15:18,372 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-09 00:15:19,022 INFO [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory [48] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-09 00:15:20,227 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [231] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-09 00:15:20,826 INFO [main] org.apache.juli.logging.DirectJDKLog [173] Starting ProtocolHandler ["http-nio-2424"]
+2025-05-09 00:15:20,858 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [220] Tomcat started on port(s): 2424 (http) with context path ''
+2025-05-09 00:15:20,884 INFO [main] org.springframework.boot.StartupInfoLogger [57] Started ReadExcelSmSfileUtilityApplication in 13.521 seconds (process running for 14.643)
+2025-05-09 00:15:21,950 INFO [scheduling-1] com.sms.scheduler.FetchFileUtility [34] 
+
+========== BULK SMS DISPATCH JOB STARTED ==========
+2025-05-09 00:15:22,725 INFO [scheduling-1] com.sms.scheduler.FetchFileUtility [43] Found 1 file(s) with status 'PENDING'. Processing started...
+2025-05-09 00:15:22,729 INFO [scheduling-1] com.sms.service.FileProcessService [30] Starting bulk SMS processing for file: C:/sms/bulk_uploads/24/24_EXCELFORMAT.xlsx
+2025-05-09 00:15:23,533 INFO [scheduling-1] com.sms.service.FileProcessService [132] Sending SMS to 9028186094
+2025-05-09 00:15:25,576 INFO [scheduling-1] com.sms.service.FileProcessService [149] SMS sent to 9028186094 | Response: {"status":true,"message":"SMS send successfully...","respCode":"00","data":{"txnId":"C0007512900010695"}}
+2025-05-09 00:15:25,577 INFO [scheduling-1] com.sms.service.FileProcessService [108] Excel file processed successfully.
+2025-05-09 00:15:25,601 INFO [scheduling-1] com.sms.scheduler.FetchFileUtility [45] Processing completed for all pending files.
+2025-05-09 00:15:25,602 INFO [scheduling-1] com.sms.scheduler.FetchFileUtility [51] ========== BULK SMS DISPATCH JOB ENDED ==========
+
+2025-05-09 00:17:01,907 INFO [scheduling-1] com.sms.scheduler.FetchFileUtility [34] 
+
+========== BULK SMS DISPATCH JOB STARTED ==========
+2025-05-09 00:17:02,373 INFO [scheduling-1] com.sms.scheduler.FetchFileUtility [39] No pending bulk SMS files found for processing.
