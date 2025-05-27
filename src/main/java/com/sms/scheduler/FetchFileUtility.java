@@ -31,7 +31,7 @@ public class FetchFileUtility {
 	@Transactional
 	@Scheduled(initialDelayString = "${scheduler.bulk.initialDelay}", fixedRateString = "${scheduler.bulk.fixedRate}")
 	protected void processMerchantOnboarding() {
-		logger.info("\n\n========== BULK SMS DISPATCH JOB STARTED ==========");
+		logger.info("\n\n========== BULK SMS DISPATCH JOB STARTED TEST ==========");
 
 		try {
 			List<BulkSmsUploadActivity> pendingFile = bulkSmsUploadRepository.findByStatus("PENDING");
