@@ -13,9 +13,6 @@ COPY target/*.jar app.jar
 # Copy application.properties agar aapke resources me hai to
 COPY src/main/resources/application.properties ./application.properties
 
-# Expose port 8080
-EXPOSE 8080
-
 # Run the application with spring config location set
 ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=classpath:/application.properties,file:/app/application.properties"]
 
