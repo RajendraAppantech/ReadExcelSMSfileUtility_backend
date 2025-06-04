@@ -65,6 +65,7 @@ public class FileProcessService {
 					isFirstLine = false;
 					continue;
 				}
+				
 
 				logger.debug("Reading line: {}", line);
 				String[] values = line.split("\\|", -1);
@@ -146,7 +147,7 @@ public class FileProcessService {
 		return fileName.substring(0, underscoreIndex);
 	}
 
-	private void sendSms(String sendorId, String entityId, String templateId, String key, String mobileNo, String body,	String fileId) {
+/*	private void sendSms(String sendorId, String entityId, String templateId, String key, String mobileNo, String body,	String fileId) {
 		try {
 			logger.info("Sending SMS to {}", mobileNo);
 
@@ -171,7 +172,34 @@ public class FileProcessService {
 		} catch (Exception e) {
 			logger.error("Failed to send SMS to {}", mobileNo, e);
 		}
+	}*/
+	
+	private void sendSms(String senderId, String entityId, String templateId, String key, String mobileNo, String body, String fileId) {
+	    try {
+	        logger.info("Sending SMS to {}", mobileNo);
+
+	        UriComponentsBuilder builder = UriComponentsBuilder
+	                .fromHttpUrl("https://sms-apidoc.appantech.com/api/sms")
+	                .queryParam("key", key)
+	                .queryParam("to", mobileNo)
+	                .queryParam("from", senderId)
+	                .queryParam("templateid", templateId)
+	                .queryParam("entityid", entityId)
+	                .queryParam("body", body)
+	                .queryParam("fileId", fileId);
+
+	        String url = builder.toUriString().replace("%20", " "); // Optional: handle body spacing
+
+	        RestTemplate restTemplate = new RestTemplate();
+	        String response = restTemplate.getForObject(url, String.class);
+
+	        logger.info("SMS sent to {} | Response: {}", mobileNo, response);
+
+	    } catch (Exception e) {
+	        logger.error("Failed to send SMS to {}", mobileNo, e);
+	    }
 	}
+
 
 	private String getCellValue(Cell cell) {
 		if (cell == null)
