@@ -146,14 +146,13 @@ public class FileProcessService {
 		return fileName.substring(0, underscoreIndex);
 	}
 
-	private void sendSms(String sendorId, String entityId, String templateId, String key, String mobileNo, String body,
-			String fileId) {
+	private void sendSms(String sendorId, String entityId, String templateId, String key, String mobileNo, String body,	String fileId) {
 		try {
 			logger.info("Sending SMS to {}", mobileNo);
 
 			UriComponentsBuilder builder = UriComponentsBuilder
 
-					.fromHttpUrl("https://sms-apidoc.appantech.com/api/sendSms")
+					.fromHttpUrl("https://sms-apidoc.appantech.com/api/sms")
 					.queryParam("key", key)
 					.queryParam("to", mobileNo)
 					.queryParam("from", sendorId)
