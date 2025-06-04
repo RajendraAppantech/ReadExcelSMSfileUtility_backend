@@ -2,12 +2,16 @@ package com.sms.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "bulk_sms_upload_activity")
@@ -42,12 +46,16 @@ public class BulkSmsUploadActivity {
 	private String uploadedBy;
 
 	@Column(name = "uploaded_date")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone = "Asia/Kolkata")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date uploadedDate;
 
 	@Column(name = "updated_by")
 	private String updatedBy;
 
 	@Column(name = "updated_date")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone = "Asia/Kolkata")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
 
 	@Column(name = "channel")
